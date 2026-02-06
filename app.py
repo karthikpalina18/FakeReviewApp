@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Load model + vectorizer
 try:
     model = joblib.load("model/fake_review_model.pkl")
-    vectorizer = joblib.load("model/tfidf_vectorizer (1).pkl")
+    vectorizer = joblib.load("model/tfidf_vectorizer.pkl")
 except Exception as e:
     print(f"Error loading models: {e}")
     model = None
