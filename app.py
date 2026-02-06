@@ -7,8 +7,12 @@ app = Flask(__name__)
 
 # Load model + vectorizer
 try:
-    model = joblib.load("model/fake_review_model.pkl")
-    vectorizer = joblib.load("model/tfidf_vectorizer.pkl")
+    model_data = joblib.load("model/fake_review_model.pkl")
+    vectorizer_data = joblib.load("model/tfidf_vectorizer.pkl")
+
+    model = model_data["model"]
+    vectorizer = vectorizer_data["vectorizer"]
+
 except Exception as e:
     print(f"Error loading models: {e}")
     model = None
